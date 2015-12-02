@@ -4,52 +4,55 @@
   <meta charset='utf-8'>
   <title>Hsin Yi 110110618</title>
   <link rel="stylesheet" href="6.css">
-  <style type="text/css">
-
-  body {
-    padding-left: 11em;
-    color: darkblue;
-    background-color: #E6E6FA }
-  ul.navbar {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 5em;
-    left: 1em;
-    width: 9em }
-  ul.navbar li {
-    background: white;
-    margin: 0.5em 0;
-    padding: 0.3em;
-    border-right: 1em solid fuchsia }
-  ul.navbar a {
-    text-decoration: none }
-  a:link {
-    color: #008844 }
-  a:visited {
-    color: #00DDAA }
-  </style>
-
 </head>
-
-<ul class="navbar">
-  <li><a href="1.html"><font face="Algerian" size="4"><b>HOME</b></a>
+<script> 
+ function mySubmit()
+ {
+   var myMessage = document.getElementById("myMessage");
+   var mybr = document.createElement("br");
+   var myTable = document.createElement("table");
+   myTable.className="myTable";
+   var myTitleTr = myTable.insertRow(-1);
+   myTitleTr.className="myTitleTr";
+   var myTitleTd = myTitleTr.insertCell(-1);
+   myTitleTd.innerHTML = document.getElementById("myTitle").value;
+   var myContentTr = myTable.insertRow(-1);
+   var myContentTd = myContentTr.insertCell(-1);
+   myContentTd.innerHTML = document.getElementById("myContent").value;   document.getElementById("myTitle").value = "";
+   document.getElementById("myContent").value = "";
+   myMessage.appendChild(mybr);
+   myMessage.appendChild(myTable);
+ } 
+</script>
+<body>
+<ul class="navbar" style="margin-top:8em">
+  <li><a href="1.html"><font face="Algerian" size="4"><b>HOME page</b></a>
   <li><a href="4.html"><font face="標楷體" size="3"><b>金門大學の傳統</b></a>
-  <li><a href="5.html"><font face="標楷體" size="3"><b>留言給我</b></a>
+  <li><a href="5.html"><font face="標楷體" size="3"><b>留言</b></a>
 </ul>
 
+<p align="center"><font face="華康鋼筆體W2" color="darkblue" align="center" size="7"><b>在金門生活......</b></P>
 
-<p align="center"><font face="華康鋼筆體W2" color="darkblue" align="center" size="7"><b>在金門迷路......</b></P>
+  <form style="margin-top:1em"> 
+   <table>
+     <tr>
+      <td width="316">&#22995;&#21517; <input type="text" id="myTitle" size="20" />
+      </td> 
+      <td width="55">
+      <input name="button" type="button" onClick="mySubmit();" value="&#30041;&#35328;" />
+      </td> 
+     </tr> 
+     </tr> 
+     <tr>
+      <td colspan="2">
+      <textarea id="myContent" cols="50" rows="10"></textarea>
+      </td>
+     </tr>
+    </table>
+   <font face="標楷體" color="#006400" align="left" size="5">
+   <div id="myMessage"></div> 
+ </form></p>
 
-<pre>
-<font face="標楷體" color="#228B22" size=5">想說什麼呢?
-  <form action="/post" method="post">
-    <p><input type="text" placeholder="Title" name="title"></p>
-    <p><textarea placeholder="Contents" name="body"></textarea></p>
-    <p><input type="submit" value="送出"></p>
-  </form>
 </font>
-</pre>
-
+</body>
 </html>
